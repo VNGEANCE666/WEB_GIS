@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Home | Monitoring Suhu dan Kelembapan Kota Tangerang Selatan</title>
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- SIDEBAR -->
+    <aside id="sidebar">
+      <div class="sidebar-head">
+        <div class="sidebar-title">
+          <button id="toggle-btn">☰</button>
+          <h2>My WebGIS</h2>
+        </div>
+        <div class="sidebar-subtitle">
+          <p>Sistem Monitoring Suhu dan Kelembapan di Tangerang Selatan</p>
+        </div>
+      </div>
+
+      <ul>
+        <li>
+          <a href="index.html" class="active">🏠<span class="nav-labels">Home</span></a>
+        </li>
+        <li>
+          <a href="maps.html">🗺️<span class="nav-labels">Maps</span></a>
+        </li>
+        <li>
+          <a href="about.html">👤<span class="nav-labels">About</span></a>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- MAIN -->
+    <main>
+
+      <!-- HERO -->
+      <section class="hero">
+        <div class="overlay"></div>
+        <div class="hero-content">
+          <h1>Monitoring Suhu & Kelembapan Berbasis WebGIS</h1>
+          <p class="subtitle">
+            Sistem pemantauan lingkungan berbasis Internet of Things (IoT)
+            dan WebGIS untuk mendukung analisis kondisi iklim mikro
+            di wilayah Kota Tangerang Selatan.
+          </p>
+          <a href="maps.html" class="cta-button">Eksplorasi Peta Interaktif</a>
+        </div>
+      </section>
+
+      <!-- SENSOR -->
+      <section class="sensors">
+        <h2>Perangkat & Sensor Sistem</h2>
+        <p style="max-width: 700px; margin: 0 auto 40px;">
+          Sistem ini dibangun menggunakan kombinasi sensor dan perangkat
+          IoT yang dirancang untuk mengumpulkan data suhu, kelembapan,
+          serta koordinat lokasi secara real-time.
+        </p>
+
+        <div class="sensor-list">
+          <div class="sensor-item">
+            <img src="https://tokoteknologi.co.id/resources/image/18/c1/f.jpg"
+              alt="DHT22" class="sensor-icon" />
+            <h3>DHT22</h3>
+            <p>
+              Sensor digital untuk pengukuran suhu dan kelembapan
+              dengan tingkat akurasi yang tinggi.
+            </p>
+          </div>
+
+          <div class="sensor-item">
+            <img src="https://tokoteknologi.co.id/resources/image/18/bf/6.jpg"
+              alt="GPS NEO 6M" class="sensor-icon" />
+            <h3>GPS NEO 6M</h3>
+            <p>
+              Modul GPS untuk menentukan koordinat geografis
+              setiap titik pemantauan.
+            </p>
+          </div>
+
+          <div class="sensor-item">
+            <img src="https://raharja.ac.id/wp-content/uploads/2021/11/ESP32-Module.png"
+              alt="ESP32" class="sensor-icon" />
+            <h3>ESP32</h3>
+            <p>
+              Mikrokontroler sebagai pusat pemrosesan data
+              dan pengiriman data ke server.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- TITIK PEMANTAUAN -->
+      <section class="monitoring-points">
+        <h2>Titik Pemantauan Lingkungan</h2>
+        <p style="max-width: 700px; margin: 0 auto 40px;">
+          Berikut adalah titik-titik pemantauan yang digunakan
+          untuk merekam data suhu dan kelembapan secara berkala
+          di berbagai lokasi.
+        </p>
+
+        <div class="monitoring-cards">
+
+          <!-- Titik 1 -->
+          <div class="card">
+            <img src="images/image1.png" class="stasiun-thumbnail" alt="Titik 1" />
+            <h3>Titik 1: <span id="residental1"></span></h3>
+            <div class="point-contents">
+              <div>
+                <p>Latitude: <span id="lat1"></span></p>
+                <p>Longitude: <span id="long1"></span></p>
+              </div>
+              <a class="gotomaps" target="_blank" href="#" id="go-to-maps1">🗺️</a>
+            </div>
+          </div>
+
+          <!-- Titik 2 -->
+          <div class="card">
+            <img src="images/image2.png" class="stasiun-thumbnail" alt="Titik 2" />
+            <h3>Titik 2: <span id="residental2"></span></h3>
+            <div class="point-contents">
+              <div>
+                <p>Latitude: <span id="lat2"></span></p>
+                <p>Longitude: <span id="long2"></span></p>
+              </div>
+              <a class="gotomaps" target="_blank" href="#" id="go-to-maps2">🗺️</a>
+            </div>
+          </div>
+
+          <!-- Titik 3 -->
+          <div class="card">
+            <img src="images/image3.png" class="stasiun-thumbnail" alt="Titik 3" />
+            <h3>Titik 3: <span id="residental3"></span></h3>
+            <div class="point-contents">
+              <div>
+                <p>Latitude: <span id="lat3"></span></p>
+                <p>Longitude: <span id="long3"></span></p>
+              </div>
+              <a class="gotomaps" target="_blank" href="#" id="go-to-maps3">🗺️</a>
+            </div>
+          </div>
+
+          <!-- Titik 4 -->
+          <div class="card">
+            <img src="images/image4.png" class="stasiun-thumbnail" alt="Titik 4" />
+            <h3>Titik 4: <span id="residental4">Loading...</span></h3>
+            <div class="point-contents">
+              <div>
+                <p>Latitude: <span id="lat4">-</span></p>
+                <p>Longitude: <span id="long4">-</span></p>
+              </div>
+              <a class="gotomaps" target="_blank" href="#" id="go-to-maps4">🗺️</a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- LOKASI -->
+      <section class="location">
+        <h2>Lokasi Institusi</h2>
+
+        <div class="location-content">
+          <div class="map-container">
+            <iframe
+  src="https://www.google.com/maps?q=Universitas+Pakuan&output=embed"
+  width="100%"
+  height="450"
+  style="border:0;"
+  loading="lazy"
+  referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+
+          </div>
+
+          <div class="contact-info">
+            <h3>Universitas Pakuan</h3>
+            <p><strong>Alamat:</strong> Jl. Pakuan, RT.02/RW.06, Tegallega, Kecamatan Bogor Tengah, Kota Bogor, Jawa Barat 16129</p>
+            <p><strong>Email:</strong> rektorat@unpak.ac.id</p>
+
+            <a class="hub-button" href="mailto:rektorat@unpak.ac.id">
+              Hubungi via Email
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer>
+        <p>&copy; 2025 Monitoring Suhu dan Kelembaban</p>
+        <p>Dikembangkan sebagai proyek Sistem Informasi Geografis</p>
+      </footer>
+
+    </main>
+  </div>
+    <script>
+     function fetchData() {
+            // Kita buat fungsi "Cerdas" agar kodingan pendek dan Alamat pasti ketemu
+            const updatePoint = (index, channelID, apiKey) => {
+                const url = `https://api.thingspeak.com/channels/${channelID}/feeds/last.json?timezone=Asia%2FJakarta&api_key=${apiKey}`;
+
+                fetch(url)
+                .then(res => res.json())
+                .then(data => {
+                    // 1. Ambil Koordinat
+                    const lat = data.field1;
+                    const lon = data.field2;
+
+                    // 2. Update HTML Koordinat
+                    if(document.getElementById(`lat${index}`)) document.getElementById(`lat${index}`).innerText = lat;
+                    if(document.getElementById(`long${index}`)) document.getElementById(`long${index}`).innerText = lon;
+
+                    // 3. Update Link Google Maps (Format Resmi)
+                    if(document.getElementById(`go-to-maps${index}`)) {
+                        document.getElementById(`go-to-maps${index}`).href = `https://www.google.com/maps/search/?api=1&query=${lat},${lon}`;
+                    }
+
+                    // 4. Cari Alamat (Reverse Geocoding)
+                    fetch(`https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lon}&format=json`)
+                    .then(res => res.json())
+                    .then(loc => {
+                        let alamatFinal = "Lokasi tidak dikenal";
+
+                        if (loc.address) {
+                            // LOGIKA ANTI-GAGAL: Cek berurutan
+                            alamatFinal = loc.address.road ||          // Cek Jalan
+                                          loc.address.building ||      // Cek Gedung
+                                          loc.address.village ||       // Cek Desa
+                                          loc.address.suburb ||        // Cek Kecamatan
+                                          loc.display_name.split(',')[0]; // Ambil nama depan
+                        } else if (loc.display_name) {
+                            alamatFinal = loc.display_name.split(',')[0];
+                        }
+
+                        // Tampilkan Alamat
+                        if(document.getElementById(`residental${index}`)) {
+                            document.getElementById(`residental${index}`).innerText = alamatFinal;
+                        }
+                    })
+                    .catch(err => {
+                        console.error(`Gagal Geocoding Titik ${index}`, err);
+                        document.getElementById(`residental${index}`).innerText = "Gagal memuat alamat";
+                    });
+                })
+                .catch(err => console.error(`Gagal ThingSpeak Titik ${index}`, err));
+            };
+
+            // --- EKSEKUSI UNTUK SEMUA TITIK ---
+            updatePoint(1, "3224295", "T8QVJ06LCOY99K48");
+            updatePoint(2, "3224296", "AOI634SUB91B8F64");
+            updatePoint(3, "3224297", "DV2JPE946T2C7CIK");
+            updatePoint(4, "3224298", "S067ZW2KT03JOA1T");
+        }
+
+        // Jalankan saat halaman dibuka
+        fetchData();
+        
+        // Update setiap 10 detik
+        setInterval(fetchData, 10000);
+    </script>
+  </body>
+</html>
